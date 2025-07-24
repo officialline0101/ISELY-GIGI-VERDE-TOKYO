@@ -1370,8 +1370,6 @@ function submitForm() {
     const formData = {
         name: document.getElementById('name').value.trim(),
         phone: document.getElementById('phone').value.trim(),
-        venue: document.getElementById('venue').value.trim(),
-        weddingDate: document.getElementById('weddingDate').value.trim(),
         visitCount: visitCount,
         selectedMenu: selectedMenu,
         selectedSymptom: selectedSymptom && selectedSymptom.length > 0 ? selectedSymptom : null,
@@ -1408,9 +1406,7 @@ function submitForm() {
 
     const optionalDetails = [
         selectedSymptomText,
-        formData.irradiationsCount,
-        formData.venue,
-        formData.weddingDate
+        formData.irradiationsCount
     ].filter(Boolean).join(','); // 空文字やnull/undefinedを除外して結合
 
     liff.sendMessages([{
