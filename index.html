@@ -772,7 +772,7 @@
     </div>
 
     <div class="container">
-        <h1>GIGI VERDE TOKYOあ<br>予約フォーム
+        <h1>GIGI VERDE TOKYO<br>予約フォーム
         </h1>
         <div class="label">お客様名<span class="required">必須</span></div>
         <input type="text" id="name" placeholder="お名前を入力してください" oninput="saveInput('name')">
@@ -863,6 +863,18 @@
                 <button type="button" onclick="selectSymptom(this)" data-category="フラワーレッスン" data-price="15000">ブライダルコース</button>
             </div>
         </div>
+
+<!-- 会場名ラベルと入力欄 -->
+<label id="baindLabel1" class="label">会場名をご記入下さい<span class="required">必須</span></label>
+<div id="baindButtons1">
+    <input type="text" id="venue" placeholder="会場名を入力してください" oninput="saveInput('venue')" style="margin-bottom: 10px; width: 100%; padding: 8px;">
+</div>
+
+<!-- ご婚礼日ラベルと入力欄 -->
+<label id="baindLabel2" class="label">ご婚礼日をご記入下さい<span class="required">必須</span></label>
+<div id="baindButtons2">
+    <input type="text" id="weddingDate" placeholder="例）2025年10月10日" oninput="saveInput('weddingDate')" style="width: 100%; padding: 8px;">
+</div>
 
         <div class="label">希望日時<span class="required">必須</span></div>
         <div class="calendar-container">
@@ -1370,6 +1382,8 @@ function submitForm() {
     const formData = {
         name: document.getElementById('name').value.trim(),
         phone: document.getElementById('phone').value.trim(),
+        venue: document.getElementById('venue').value.trim(),
+        weddingDate: document.getElementById('weddingDate').value.trim(),
         visitCount: visitCount,
         selectedMenu: selectedMenu,
         selectedSymptom: selectedSymptom && selectedSymptom.length > 0 ? selectedSymptom : null,
@@ -1406,7 +1420,9 @@ function submitForm() {
 
     const optionalDetails = [
         selectedSymptomText,
-        formData.irradiationsCount
+        formData.irradiationsCount,
+        formData.venue,
+        formData.weddingDate
     ].filter(Boolean).join(','); // 空文字やnull/undefinedを除外して結合
 
     liff.sendMessages([{
