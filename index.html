@@ -786,6 +786,7 @@
             <button type="button" onclick="showMenu('male')">来店引取り</button>
             <button type="button" onclick="showMenu('female')">婚礼相談</button>
             <button type="button" onclick="showMenu('whitening')">押し花の相談</button>
+            <button type="button" onclick="showMenu('flowerlesson')">フラワーレッスン</button>
         </div>
 
         <!-- メニュー表示エリア（選択されたメニュー名がここに出る） -->
@@ -835,19 +836,6 @@
                 <button type="button" onclick="selectSymptom(this)" data-category="押し花の相談" data-price="15000">引取り</button>
                 <button type="button" onclick="selectSymptom(this)" data-category="押し花の相談" data-price="15000">持ち込み(注文済)</button>
                 <button type="button" onclick="selectSymptom(this)" data-category="押し花の相談" data-price="15000">持ち込み(ご相談)</button>
-            </div>
-        </div>
-
-        <div id="flowerlesson" class="menu-section">
-            <div class="highlight-background">
-                <span class="highlight-texthissu">フラワーレッスン<span class="required">必須</span></span>
-            </div>
-            <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-category="フラワーレッスン" data-price="15000">基本コース</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="フラワーレッスン" data-price="15000">応用コース</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="フラワーレッスン" data-price="15000">プロフェッショナルコース</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="フラワーレッスン" data-price="15000">マンスリー</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="フラワーレッスン" data-price="15000">ブライダルコース</button>
             </div>
         </div>
 
@@ -1250,7 +1238,6 @@ if (isBaindSelected) {
             updateDisplayInfo();
         }
 
-
         function selectirradiations(button) {
             // 選択された日時をリセット
             selectedFullDate = '';
@@ -1456,7 +1443,7 @@ function submitForm() {
                 return;
             }
 
-            const url = 'https://script.google.com/macros/s/AKfycby-v0v34lMicreKXXxDkRBrYd0PkLyv4PqQMSeI_whGHXcLQIeyYms4DU3ASyMGGwZA/exec' +
+            const url = 'https://script.google.com/macros/s/AKfycbxTJBgAqaNDSwRSGPryDPN2Eea24zI_DzgX6FLHllnY8PfAx-tmRH_zU0f9LHmvamZ7/exec' +
                 `?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`;
 
             try {
