@@ -87,19 +87,20 @@
             border-color: #000;
         }
 
-        /* 枠線の上に乗るラベル */
-        .input-group label {
-            position: absolute;
-            top: -9px;
-            left: 12px;
-            background-color: #ffffff;
-            padding: 0 6px;
-            font-size: 12px;
-            color: #666;
-            font-weight: 400;
-            line-height: 1.4;
-            pointer-events: none;
-            white-space: nowrap;
+        /* 備考欄など長文ラベル用 */
+        .input-group label.label-long {
+            position: relative;
+            top: auto;
+            left: auto;
+            display: block;
+            white-space: normal;
+            word-break: break-word;
+            padding: 0 0 8px 2px;
+            font-size: 13px;
+            color: #444;
+            font-weight: 500;
+            line-height: 1.6;
+            background-color: transparent;
         }
 
         .required {
@@ -664,8 +665,8 @@
         <div id="baindButtons2" style="display:none;"></div>
 
         <div class="input-group" style="margin-top: 30px;">
+            <label class="label-long">備考欄<br><span style="font-size: 11px; font-weight: 400; color: #888;">上記に当てはまらない金額、色合いのご希望はこちらにご記入後、<br>ご予約お願いします</span></label>
             <textarea id="message" rows="4" placeholder=" "></textarea>
-            <label>備考欄（色合いのご希望がある場合はご記入ください）</label>
         </div>
 
         <div class="section-label">希望日時 <span class="required">*</span></div>
