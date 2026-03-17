@@ -87,20 +87,19 @@
             border-color: #000;
         }
 
-        /* 備考欄など長文ラベル用 */
-        .input-group label.label-long {
-            position: relative;
-            top: auto;
-            left: auto;
-            display: block;
-            white-space: normal;
-            word-break: break-word;
-            padding: 0 0 8px 2px;
-            font-size: 13px;
-            color: #444;
-            font-weight: 500;
-            line-height: 1.6;
-            background-color: transparent;
+        /* 枠線の上に乗るラベル */
+        .input-group label {
+            position: absolute;
+            top: -9px;
+            left: 12px;
+            background-color: #ffffff;
+            padding: 0 6px;
+            font-size: 12px;
+            color: #666;
+            font-weight: 400;
+            line-height: 1.4;
+            pointer-events: none;
+            white-space: nowrap;
         }
 
         .required {
